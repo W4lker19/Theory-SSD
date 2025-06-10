@@ -353,25 +353,6 @@ store(username, salt + stored_hash)
 
 ---
 
-## Study Checklist
-
-### Week 1 Mastery Check:
-- [ ] Can define authentication and its role in security
-- [ ] Understands all four authentication factors with examples
-- [ ] Explains password vulnerabilities and countermeasures
-- [ ] Describes hash functions and salt usage
-- [ ] Recognizes user behavior challenges in authentication
-- [ ] Identifies distributed authentication challenges
-- [ ] Can analyze authentication security trade-offs
-
-### Preparation for Week 2 (Biometric):
-- [ ] Understands biometric factor basics from Week 1
-- [ ] Knows false accept/reject rate concepts
-- [ ] Familiar with privacy concerns in biometric systems
-- [ ] Ready to dive deeper into biometric technologies
-
----
-
 ## Practice Questions
 
 ### Conceptual Understanding:
