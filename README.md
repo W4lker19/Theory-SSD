@@ -1,4 +1,3 @@
-# Systems and Data Security (MSI 2024/2025)
 **University of Porto - Faculty of Sciences**  
 **Department of Computer Science** 
 
