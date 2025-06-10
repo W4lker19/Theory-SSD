@@ -143,14 +143,14 @@ Alice (Sender) → SDS (Server) → Bob (Recipient)
 ```
 ┌─────────────────────────────────┐
 │        Tamper-Resistance        │
-│  ┌─────────────────────────────┐ │
-│  │        Obfuscation          │ │
-│  │                             │ │
-│  │  • Key Management           │ │
-│  │  • Authentication           │ │
-│  │  • Cryptography             │ │
-│  │  • Scrambling Algorithms    │ │
-│  └─────────────────────────────┘ │
+│  ┌────────────────────────────┐ │
+│  │        Obfuscation         │ │
+│  │                            │ │
+│  │  • Key Management          │ │
+│  │  • Authentication          │ │
+│  │  • Cryptography            │ │
+│  │  • Scrambling Algorithms   │ │
+│  └────────────────────────────┘ │
 └─────────────────────────────────┘
 ```
 
