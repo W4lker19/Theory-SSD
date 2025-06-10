@@ -7,7 +7,7 @@ This repository contains materials and notes from the Systems and Data Security 
 
 ## 📋 Table of Contents
 
-- [🔐Authentication - Fundamentals](week1.md)
+- [🔐Authentication - Fundamentals](./week1.md)
 - [🧬Biometric](./week2.md)
 - [💾Tokens and Two-Factor Authentication](./week3.md)
 - [🏛️FIDO Alliance and Standards](./week4.md)
