@@ -722,14 +722,13 @@ Trusted program **misuses its privileges** on behalf of less-privileged user to 
 5. **Complete mediation**: Check every access attempt
 6. **Open design**: Security through policy, not obscurity
 
-### Security Models Comparison
 | Model | Primary Goal | Key Properties | Best Use Cases |
 |-------|--------------|----------------|----------------|
-| DAC | Flexibility | Owner control, delegation | Collaborative environments |
-| MAC | Strong security | System enforcement, labels | Military, government |
-| RBAC | Administrative ease | Role-based, organizational | Enterprise systems |
-| Bell-LaPadula | Confidentiality | No read up, no write down | Classified information |
-| Biba | Integrity | No read down, no write up | System protection |
+| **DAC** | Flexibility | Owner control, delegation | Collaborative environments |
+| **MAC** | Strong security | System enforcement, labels | Military, government |
+| **RBAC** | Administrative ease | Role-based, organizational | Enterprise systems |
+| **Bell-LaPadula** | Confidentiality | No read up, no write down | Classified information |
+| **Biba** | Integrity | No read down, no write up | System protection |
 
 ---
 
