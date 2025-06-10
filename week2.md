@@ -3,7 +3,7 @@
 ## Course Context: Security & Data Systems
 
 **Week 2 Focus:** Biometric Authentication Systems  
-**Previous:** Authentication Fundamentals → **Current:** Biometric → **Next:** Tokens and Two-Factor → FIDO Alliance
+**Current:** Biometric → **Next:** Tokens and Two-Factor → FIDO Alliance
 
 ---
 
