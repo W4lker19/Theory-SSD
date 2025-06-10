@@ -178,8 +178,8 @@ By the end of Week 4, you should master:
 │   User Device   │    │  Relying Party   │
 │                 │    │                  │
 │ ┌─────────────┐ │    │ ┌──────────────┐ │
-│ │Web Browser  │◄┼────┼►│Web Application│ │
-│ │(Chrome)     │ │    │ │              │ │
+│ │ Web Browser │◄┼────┼►│    Web App   │ │
+│ │  (Chrome)   │ │    │ │              │ │
 │ └─────────────┘ │    │ └──────────────┘ │
 │        │        │    │        │         │
 │        ▼        │    │        ▼         │
