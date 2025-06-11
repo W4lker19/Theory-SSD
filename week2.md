@@ -514,16 +514,164 @@ Raw Sample → Segmentation → Enhancement → Feature Extraction → Template 
 ## Practice Questions
 
 ### Conceptual Understanding:
+
+<div class="question-item">
+<div class="question">
 1. Explain the fundamental difference between verification and identification in biometric systems.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Verification</strong> is a 1:1 comparison where the system confirms if a person is who they claim to be by comparing their biometric sample against a single stored template (e.g., "Is this person John?"). <strong>Identification</strong> is a 1:N comparison where the system determines who a person is by comparing their biometric sample against an entire database of templates (e.g., "Who is this person?"). Verification is faster, more accurate, and privacy-preserving since it requires a claimed identity first, while identification is computationally intensive and raises more privacy concerns as it searches through potentially thousands of records.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. Why is the Equal Error Rate (EER) used as a standard comparison metric between biometric technologies?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+EER represents the point where <strong>False Acceptance Rate (FAR)</strong> equals <strong>False Rejection Rate (FRR)</strong>, providing a single metric that balances both types of errors. This is crucial because FAR and FRR have an inverse relationship - reducing one typically increases the other. EER allows fair comparison between different biometric technologies regardless of their underlying algorithms or characteristics. A lower EER indicates better overall accuracy and reliability. It also helps system designers choose appropriate threshold settings and compare vendor solutions objectively without being skewed by optimized settings that favor one error type over another.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. How do environmental factors affect different biometric technologies, and what design considerations address these challenges?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+Environmental factors impact biometrics differently: <strong>Fingerprints</strong> are affected by moisture, dirt, and temperature causing ridge distortion. <strong>Face recognition</strong> struggles with lighting changes, shadows, and reflections. <strong>Voice recognition</strong> is impacted by background noise, acoustics, and health conditions. <strong>Iris scanning</strong> requires controlled lighting and is affected by eye conditions. Design considerations include: <strong>Multi-spectral sensors</strong> for varying conditions, <strong>liveness detection</strong> to prevent spoofing, <strong>adaptive algorithms</strong> that adjust to environmental changes, <strong>fallback mechanisms</strong> when primary biometric fails, <strong>environmental monitoring</strong> to trigger alternative authentication methods, and <strong>regular template updates</strong> to account for aging and environmental adaptation.
+</div>
+</div>
 
 ### Applied Analysis:
+
+<div class="question-item">
+<div class="question">
 1. Design a biometric authentication system for a hospital. Consider patient identification, staff access, and privacy requirements.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Multi-tiered approach</strong>: <strong>Patient identification</strong> using palm vein or iris scanning (hygienic, works with bandages), with backup facial recognition for unconscious patients. <strong>Staff access</strong> using fingerprint + PIN for general areas, iris scanning for high-security zones (pharmacy, patient records). <strong>Privacy measures</strong>: Template encryption, biometric data separation from medical records, audit logging, consent management for patients. <strong>Special considerations</strong>: Emergency override procedures, visitor management system, integration with existing badge systems, infection control protocols (contactless preferred), accessibility for disabled patients/staff, and compliance with HIPAA regulations. Include <strong>liveness detection</strong> and <strong>anti-spoofing</strong> measures throughout.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. Analyze the security trade-offs between storing biometric templates locally on smart cards versus centralized database storage.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Local storage (smart cards)</strong>: <strong>Advantages</strong> - User controls their data, no central target for attackers, works offline, better privacy compliance. <strong>Disadvantages</strong> - Cards can be lost/stolen, limited processing power, difficult to update templates, no cross-verification capabilities. <strong>Centralized storage</strong>: <strong>Advantages</strong> - Better fraud detection, easier template updates, cross-system verification, centralized security controls, backup and recovery. <strong>Disadvantages</strong> - High-value target for attackers, privacy concerns, requires network connectivity, single point of failure. <strong>Hybrid approach</strong>: Store encrypted templates locally with hashed references centrally, enabling both privacy and fraud detection while maintaining offline capability.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. How would you implement a multi-modal biometric system that gracefully handles individual component failures?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+Implement <strong>redundant sensing</strong> with multiple biometric modalities (fingerprint + iris + voice). Use <strong>score-level fusion</strong> with weighted algorithms that can function with partial inputs. Create <strong>fallback hierarchies</strong>: if primary biometric fails, seamlessly transition to secondary options. Implement <strong>health monitoring</strong> for each sensor with automatic detection of hardware failures. Include <strong>adaptive thresholds</strong> that adjust confidence levels based on available modalities. Provide <strong>alternative authentication</strong> methods (smart cards, tokens) when biometric systems are unavailable. Use <strong>real-time system monitoring</strong> with alerts for component failures and <strong>graceful degradation</strong> that maintains security while reducing user friction during partial system failures.
+</div>
+</div>
 
 ### Critical Thinking:
+
+<div class="question-item">
+<div class="question">
 1. How might advances in artificial intelligence and machine learning change the threat landscape for biometric authentication?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+AI advances create new attack vectors: <strong>Deepfakes and synthetic biometrics</strong> can fool face and voice recognition systems with increasingly realistic fake samples. <strong>Adversarial attacks</strong> can systematically exploit ML model weaknesses. <strong>Template reconstruction</strong> becomes possible through advanced AI analysis of biometric templates. However, AI also improves defenses: <strong>Enhanced liveness detection</strong>, <strong>behavioral biometrics</strong> analysis, <strong>anomaly detection</strong> for unusual patterns, and <strong>continuous authentication</strong> through ML-powered behavioral analysis. The key is developing <strong>AI-resistant biometric systems</strong> that use multiple detection methods, regular model updates, and AI-powered security monitoring to stay ahead of evolving threats.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. What are the ethical implications of mandatory biometric authentication in public services?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+Key ethical concerns include: <strong>Privacy and consent</strong> - citizens cannot opt out of essential services, creating forced participation. <strong>Surveillance concerns</strong> - potential for tracking and monitoring citizen activities. <strong>Exclusion risks</strong> - people with certain disabilities, injuries, or conditions may be unable to use biometric systems. <strong>Data security</strong> - government breaches could expose irreplaceable biometric data. <strong>Function creep</strong> - systems implemented for one purpose may expand beyond original intent. <strong>Cultural and religious considerations</strong> - some groups may object to biometric collection. <strong>Mitigation strategies</strong>: Robust privacy laws, multiple authentication options, strict purpose limitation, strong cybersecurity, transparent governance, and regular ethical reviews of system use and expansion.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. How should biometric systems be designed to accommodate users with disabilities while maintaining security standards?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Universal design principles</strong>: Offer <strong>multiple biometric modalities</strong> so users can choose accessible options (voice for mobility impaired, iris for those with hand injuries). Implement <strong>adaptive interfaces</strong> with adjustable height sensors, audio prompts for visually impaired users, and extended timeout periods. Provide <strong>alternative authentication methods</strong> like PKI cards or assisted authentication for users who cannot use any biometric method. Include <strong>accommodation protocols</strong> for temporary disabilities (injuries, illness) with secure fallback procedures. Design <strong>accessible enrollment processes</strong> with trained staff assistance and flexible capture methods. Ensure <strong>continuous monitoring</strong> for accessibility barriers and regular user feedback incorporation. Maintain security through <strong>compensating controls</strong> like enhanced monitoring for alternative authentication methods and fraud detection systems.
+</div>
+</div>
+
+<style>
+.question-item {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.question {
+    padding: 15px;
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.answer {
+    padding: 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    display: none;
+}
+
+.answer.show {
+    display: block;
+}
+
+.answer strong {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.toggle-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+.toggle-btn.active {
+    background-color: #dc3545;
+}
+</style>
+
+<script>
+function toggleAnswer(button) {
+    const questionItem = button.closest('.question-item');
+    const answer = questionItem.querySelector('.answer');
+    
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        button.textContent = 'Show Answer';
+        button.classList.remove('active');
+    } else {
+        answer.classList.add('show');
+        button.textContent = 'Hide Answer';
+        button.classList.add('active');
+    }
+}
+</script>
