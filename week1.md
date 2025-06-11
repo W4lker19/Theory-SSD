@@ -356,16 +356,159 @@ store(username, salt + stored_hash)
 ## Practice Questions
 
 ### Conceptual Understanding:
+
+<div class="question-item">
+<div class="question">
 1. Explain why authentication is considered the foundation of security systems.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+Authentication forms the foundation because it establishes trust in digital systems. Without reliable authentication, authorization becomes meaningless - you can't grant appropriate permissions if you don't know who is requesting access. It prevents unauthorized access, enables accountability through audit trails, and supports non-repudiation. In the AAA model, authentication must come first as it identifies the entity before determining what they can do (authorization) or tracking what they did (accounting).
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. Compare the security and usability trade-offs of the four authentication factors.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+**Knowledge factors** are highly usable (familiar, easily changed) but vulnerable to sharing and guessing. **Possession factors** offer better security through physical tokens but can be lost or stolen. **Inherence factors** (biometrics) provide strong security and convenience but raise privacy concerns and can't be changed if compromised. **Context factors** are transparent to users but complex to implement and can change legitimately. The optimal approach combines multiple factors to balance security with user experience.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. Why is salt essential in password storage, and how does it prevent rainbow table attacks?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+Salt prevents rainbow table attacks by ensuring each password hash is unique, even for identical passwords. Rainbow tables contain precomputed hashes for common passwords, but when salt is added, attackers would need separate rainbow tables for every possible salt value, making the attack computationally infeasible. Salt forces attackers to compute hashes individually for each password, dramatically increasing the time and resources required for brute force attacks.
+</div>
+</div>
 
 ### Applied Analysis:
+
+<div class="question-item">
+<div class="question">
 1. Design an authentication system for a banking application. What factors would you use and why?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+For banking, I'd implement: **Knowledge factor** (strong password/PIN), **Possession factor** (mobile app with push notifications or SMS), **Context factors** (device fingerprinting, geolocation, behavioral patterns). For high-value transactions, add **Inherence factor** (biometrics). This provides multiple layers of security while maintaining usability. Include risk-based authentication that requires additional factors for unusual activity patterns, locations, or transaction amounts.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. Analyze a password policy: length 8+, mixed case, numbers, symbols, 90-day expiration. What are the strengths and weaknesses?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+**Strengths**: Enforces complexity that resists brute force attacks, prevents long-term credential reuse. **Weaknesses**: 8 characters is relatively short by modern standards, complexity requirements often lead to predictable patterns (Password1!, Password2!), 90-day expiration causes user fatigue and encourages weak password practices like incrementing numbers. **Better approach**: Longer minimum length (12+ characters), encourage passphrases, implement breach monitoring instead of arbitrary expiration, focus on password uniqueness across services.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. How would you implement secure password reset for users who forget their credentials?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+Multi-step process: **Identity verification** through multiple channels (email + SMS, or security questions + email), **Time-limited tokens** (15-30 minutes), **Single-use reset links** that expire after use, **Account lockout** after multiple failed attempts, **Audit logging** of all reset attempts, **Alternative verification** methods for compromised email accounts (in-person verification, secondary email, trusted contacts). Never send passwords in plaintext; always require users to create new passwords through secure forms.
+</div>
+</div>
 
 ### Critical Thinking:
+
+<div class="question-item">
+<div class="question">
 1. How might quantum computing impact current password hashing techniques?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+Quantum computers using Grover's algorithm could theoretically reduce the effective security of hash functions by half (256-bit becomes 128-bit equivalent). However, current password hashing functions like Argon2, scrypt, and bcrypt derive their security more from computational cost and memory requirements than pure cryptographic strength. The iterative nature and memory-hard functions would still require significant quantum resources. Organizations should plan for post-quantum cryptography and consider increasing iteration counts and key lengths as quantum computing advances.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. What authentication challenges emerge in IoT devices with limited user interfaces?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+IoT devices face unique challenges: **Limited input methods** (no keyboard/screen), **Constrained resources** (processing power, memory), **Physical access** risks, **Scalability** for device management. Solutions include: **Device certificates** embedded during manufacturing, **Bluetooth/WiFi pairing** with authenticated mobile apps, **QR codes** for initial setup, **Hardware security modules**, **Network-level authentication** through gateways, **Behavioral authentication** based on device usage patterns, **Remote attestation** to verify device integrity.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. How do cultural differences affect global authentication system design?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+Cultural factors include: **Privacy expectations** (biometric acceptance varies significantly), **Technology adoption** patterns (mobile-first vs desktop-first regions), **Language and character sets** (password complexity varies by script), **Regulatory requirements** (GDPR in Europe, different data residency laws), **Trust in institutions** affects acceptance of government-issued digital IDs, **Social structures** influence security question effectiveness, **Economic factors** affect device availability and internet connectivity. Global systems need flexible authentication options, localized user experiences, and compliance with regional regulations while maintaining security standards.
+</div>
+</div>
+
+<style>
+.question-item {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.question {
+    padding: 15px;
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.answer {
+    padding: 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    display: none;
+}
+
+.answer.show {
+    display: block;
+}
+
+.toggle-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+.toggle-btn.active {
+    background-color: #dc3545;
+}
+</style>
+
+<script>
+function toggleAnswer(button) {
+    const questionItem = button.closest('.question-item');
+    const answer = questionItem.querySelector('.answer');
+    
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        button.textContent = 'Show Answer';
+        button.classList.remove('active');
+    } else {
+        answer.classList.add('show');
+        button.textContent = 'Hide Answer';
+        button.classList.add('active');
+    }
+}
+</script>
