@@ -658,21 +658,196 @@ Phase 5: Full organization coverage
 ## Practice Questions
 
 ### Conceptual Understanding:
+
+<div class="question-item">
+<div class="question">
 1. Explain why SMS-based 2FA is considered less secure than app-based authentication.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+SMS-based 2FA has several vulnerabilities: <strong>SIM swapping attacks</strong> where attackers convince carriers to transfer phone numbers to their devices, <strong>SS7 protocol vulnerabilities</strong> that allow interception of SMS messages, <strong>SMS interception</strong> through malware or network attacks, and <strong>social engineering</strong> against telecom providers. Additionally, SMS codes are <strong>static and reusable</strong> for a time window, creating replay attack opportunities. App-based authentication uses <strong>cryptographic keys</strong> stored securely on devices, generates <strong>time-based one-time passwords (TOTP)</strong> that change every 30 seconds, works <strong>offline</strong>, and provides <strong>mutual authentication</strong> between device and service. Apps also offer better <strong>user experience</strong> with push notifications and don't rely on potentially unreliable SMS delivery networks.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. How does device-centric authentication differ from traditional user-centric models?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>User-centric authentication</strong> focuses on verifying the person's identity through credentials they know or are (passwords, biometrics), allowing users to authenticate from any device. <strong>Device-centric authentication</strong> establishes trust with specific devices through unique device identifiers, certificates, or hardware security modules. Key differences: Device-centric provides <strong>stronger assurance</strong> about the authentication environment, reduces <strong>credential theft risks</strong> since secrets are bound to hardware, enables <strong>seamless user experience</strong> on trusted devices, but creates <strong>device dependency</strong> and complicates <strong>device replacement scenarios</strong>. Modern approaches combine both models: device registration establishes initial trust, then ongoing authentication considers both user credentials and device trustworthiness for <strong>risk-based authentication</strong> decisions.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. What privacy protection mechanisms prevent cross-site tracking in FIDO tokens?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+FIDO tokens implement several privacy protections: <strong>Per-service key pairs</strong> - each website gets unique cryptographic keys, preventing correlation across sites. <strong>No shared identifiers</strong> - tokens don't transmit serial numbers or static identifiers that could track users. <strong>Origin binding</strong> - cryptographic keys are bound to specific domains, preventing cross-site key reuse. <strong>User verification isolation</strong> - biometric templates or PINs remain on the token and are never shared with websites. <strong>Attestation anonymity</strong> - when tokens prove their authenticity, they use anonymous attestation or large anonymity sets to prevent individual device tracking. <strong>Local user presence verification</strong> ensures users consciously consent to each authentication action, preventing silent background tracking attempts.
+</div>
+</div>
 
 ### Applied Analysis:
+
+<div class="question-item">
+<div class="question">
 1. Design a 2FA implementation for a healthcare organization. Consider HIPAA compliance and user workflow.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Multi-tiered approach</strong>: <strong>Primary method</strong> - Hardware tokens or smartphone apps with TOTP for all clinical staff accessing PHI. <strong>Backup methods</strong> - Phone call verification system for app failures, and secure administrative override for emergencies. <strong>HIPAA compliance</strong>: Implement <strong>audit logging</strong> of all authentication attempts, <strong>encrypted storage</strong> of backup codes, <strong>role-based access</strong> with stronger authentication for administrative functions, and <strong>business associate agreements</strong> with 2FA vendors. <strong>Workflow considerations</strong>: <strong>Shared workstation support</strong> with fast re-authentication, <strong>mobile device management</strong> for personal devices, <strong>emergency access procedures</strong> with enhanced monitoring, <strong>integration with existing EMR systems</strong>, and <strong>staff training programs</strong> with regular security awareness updates. Include <strong>remember device</strong> options for trusted workstations with periodic re-verification.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. Compare the security and usability trade-offs between hardware tokens and smartphone apps.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Hardware tokens</strong>: <strong>Security advantages</strong> - Dedicated secure hardware, isolated from malware, tamper-resistant, longer battery life. <strong>Usability challenges</strong> - Additional device to carry, can be lost/forgotten, limited display, higher cost, difficult replacement process. <strong>Smartphone apps</strong>: <strong>Security concerns</strong> - Vulnerable to mobile malware, shared device risks, dependence on OS security updates, potential for screen capture attacks. <strong>Usability benefits</strong> - Always carried, familiar interface, easy backup/restore, push notifications, free deployment, biometric protection. <strong>Best practice</strong>: Offer both options based on user risk profiles - hardware tokens for high-privilege users and critical systems, smartphone apps for general users, with <strong>backup methods</strong> and <strong>device attestation</strong> to verify app integrity.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. How would you implement secure account recovery for users who lose their 2FA device?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Multi-layered recovery system</strong>: <strong>Pre-generated backup codes</strong> - Users receive single-use recovery codes during 2FA setup, stored securely offline. <strong>Alternative authentication methods</strong> - Secondary email verification, SMS to verified phone numbers, or backup hardware tokens. <strong>Administrative verification</strong> - In-person identity verification with government ID for high-security accounts. <strong>Recovery contacts</strong> - Trusted individuals who can vouch for user identity through secure notification system. <strong>Time delays and monitoring</strong> - Implement waiting periods for account recovery with enhanced security monitoring during the recovery process. <strong>Verification requirements</strong> - Require multiple forms of identity verification and knowledge-based authentication. Always <strong>audit and alert</strong> all recovery attempts, require <strong>new 2FA setup</strong> immediately after recovery, and consider <strong>partial access restoration</strong> with gradual privilege escalation.
+</div>
+</div>
 
 ### Critical Thinking:
+
+<div class="question-item">
+<div class="question">
 1. How might quantum computing impact current cryptographic authentication methods?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+Quantum computers threaten current authentication through <strong>Shor's algorithm</strong> breaking RSA and ECC public key cryptography, and <strong>Grover's algorithm</strong> reducing symmetric key security by half. Impact on authentication: <strong>PKI certificates</strong> become vulnerable, <strong>digital signatures</strong> can be forged, <strong>key exchange protocols</strong> compromised. However, <strong>symmetric authentication</strong> (HMAC, AES) remains relatively secure with increased key sizes. <strong>Mitigation strategies</strong>: Transition to <strong>post-quantum cryptography</strong> algorithms (lattice-based, hash-based signatures), implement <strong>crypto-agility</strong> in systems for algorithm updates, increase <strong>symmetric key lengths</strong> (256-bit becomes 128-bit effective security), and develop <strong>quantum key distribution</strong> for high-security applications. Organizations should begin <strong>quantum risk assessments</strong> and plan migration strategies now, as quantum computers capable of breaking current cryptography may emerge within 10-20 years.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. What authentication challenges emerge in IoT devices with limited user interfaces?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+IoT authentication challenges include: <strong>Limited input methods</strong> - no keyboards, small displays, or button-only interfaces prevent traditional password entry. <strong>Resource constraints</strong> - limited processing power, memory, and battery life restrict cryptographic operations. <strong>Physical security</strong> - devices often deployed in unsecured locations vulnerable to tampering. Solutions: <strong>Device certificates</strong> embedded during manufacturing, <strong>proximity-based authentication</strong> using Bluetooth or NFC with authenticated mobile apps, <strong>QR code provisioning</strong> for initial setup, <strong>network-level authentication</strong> through secure gateways, <strong>behavioral authentication</strong> based on device usage patterns, and <strong>hardware security modules</strong> for key storage. Implement <strong>device attestation</strong> to verify integrity, <strong>secure boot processes</strong>, <strong>over-the-air update authentication</strong>, and <strong>revocation mechanisms</strong> for compromised devices. Consider <strong>zero-trust models</strong> where device authentication is continuous rather than one-time.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. How do you balance security requirements with accessibility needs for disabled users?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Universal design approach</strong>: Provide <strong>multiple authentication options</strong> so users can choose accessible methods - voice recognition for mobility-impaired users, large button interfaces for vision impairments, extended timeout periods for cognitive disabilities. <strong>Adaptive technologies</strong>: Support <strong>assistive devices</strong> like screen readers, implement <strong>alternative input methods</strong> (switch controls, eye-tracking), and provide <strong>audio prompts and feedback</strong>. <strong>Accommodation procedures</strong>: Offer <strong>assisted authentication</strong> with trained staff, <strong>alternative verification methods</strong> for users who cannot use standard biometrics, and <strong>temporary accommodations</strong> for situational disabilities. <strong>Security compensations</strong>: Enhanced monitoring for alternative authentication methods, <strong>risk-based assessment</strong> adjusting security requirements based on user capabilities, and <strong>graduated access</strong> providing different security levels. Ensure <strong>privacy protection</strong> for disability-related data and regular <strong>accessibility audits</strong> of authentication systems with disabled user feedback.
+</div>
+</div>
 
 ### Technical Implementation:
+
+<div class="question-item">
+<div class="question">
 1. Design the protocol flow for QR-code based login system.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Protocol flow</strong>: 1) <strong>Session initiation</strong> - Web application generates unique session ID and displays QR code containing session ID + server URL. 2) <strong>Mobile scanning</strong> - Authenticated mobile app scans QR code, extracts session ID and validates server certificate. 3) <strong>Challenge generation</strong> - Mobile app requests challenge from server using session ID, server responds with cryptographic challenge. 4) <strong>User authorization</strong> - Mobile app displays login request details, user approves with biometric/PIN verification. 5) <strong>Response signing</strong> - App signs challenge with user's private key stored securely on device. 6) <strong>Authentication completion</strong> - Server validates signature, establishes web session, sends confirmation to both web browser and mobile app. <strong>Security features</strong>: Time-limited QR codes, mutual TLS authentication, replay attack prevention, user consent verification, and secure key storage with hardware security modules where available.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 2. Explain how Channel ID prevents cookie theft while maintaining user privacy.
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Channel ID</strong> creates a persistent, per-origin public-private key pair in the browser that binds TLS connections to specific client certificates. <strong>Cookie theft prevention</strong>: Even if cookies are stolen through XSS or network interception, attackers cannot use them without the corresponding private key stored securely in the browser. The server validates that authentication cookies are presented along with valid Channel ID signatures. <strong>Privacy protection</strong>: Keys are <strong>origin-specific</strong> - each website gets a unique key pair, preventing cross-site tracking. <strong>Key rotation</strong> occurs periodically to limit tracking windows. <strong>User control</strong> - users can delete keys, and incognito mode uses ephemeral keys. The system provides <strong>perfect forward secrecy</strong> and prevents <strong>session hijacking</strong> while ensuring that legitimate authentication sessions cannot be replayed from different devices or contexts. This creates a strong binding between the authenticated user, their device, and the specific TLS connection.
+</div>
+</div>
+
+<div class="question-item">
+<div class="question">
 3. What considerations are needed for deploying 2FA across multiple geographic regions?
+<button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
+</div>
+<div class="answer">
+<strong>Technical considerations</strong>: <strong>Network latency</strong> - Deploy regional authentication servers to reduce TOTP timing issues, implement <strong>clock synchronization</strong> across regions with NTP servers. <strong>Redundancy and failover</strong> - Cross-region backup systems for high availability, data replication strategies for user authentication data. <strong>Regulatory compliance</strong>: <strong>Data residency requirements</strong> - some countries mandate local storage of authentication data, <strong>privacy regulations</strong> (GDPR, local data protection laws), <strong>cryptographic standards</strong> may vary by jurisdiction. <strong>Operational challenges</strong>: <strong>SMS delivery reliability</strong> varies by region and carrier, <strong>app store restrictions</strong> may limit authenticator app availability, <strong>device diversity</strong> and OS versions across markets. <strong>Cultural factors</strong>: Different <strong>technology adoption patterns</strong>, varying <strong>smartphone penetration rates</strong>, local preferences for authentication methods. <strong>Implementation strategy</strong>: Phased regional rollouts, local technical support teams, multi-language support, and region-specific backup authentication methods.
+</div>
+</div>
+
+<style>
+.question-item {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.question {
+    padding: 15px;
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.answer {
+    padding: 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    display: none;
+}
+
+.answer.show {
+    display: block;
+}
+
+.answer strong {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.toggle-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+.toggle-btn.active {
+    background-color: #dc3545;
+}
+</style>
+
+<script>
+function toggleAnswer(button) {
+    const questionItem = button.closest('.question-item');
+    const answer = questionItem.querySelector('.answer');
+    
+    if (answer.classList.contains('show')) {
+        answer.classList.remove('show');
+        button.textContent = 'Show Answer';
+        button.classList.remove('active');
+    } else {
+        answer.classList.add('show');
+        button.textContent = 'Hide Answer';
+        button.classList.add('active');
+    }
+}
+</script>
