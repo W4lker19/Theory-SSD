@@ -57,8 +57,8 @@ Biometric Authentication = Measurement → Feature Extraction → Template Match
 ### Error Rate Analysis
 
 #### **Primary Error Types:**
-- **False Accept Rate (FAR)**: Probability system incorrectly accepts unauthorized user
-- **False Reject Rate (FRR)**: Probability system incorrectly rejects authorized user
+- **Fraud / False Accept Rate (FAR)**: Probability system incorrectly accepts unauthorized user
+- **Insult Rate / False Reject Rate (FRR)**: Probability system incorrectly rejects authorized user
 - **Equal Error Rate (EER)**: Point where FAR = FRR (comparison metric)
 - **Failure to Enroll (FTE)**: Percentage of users who cannot register
 
