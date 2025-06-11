@@ -373,7 +373,7 @@ Authentication forms the foundation because it establishes trust in digital syst
 <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
 </div>
 <div class="answer">
-**Knowledge factors** are highly usable (familiar, easily changed) but vulnerable to sharing and guessing. **Possession factors** offer better security through physical tokens but can be lost or stolen. **Inherence factors** (biometrics) provide strong security and convenience but raise privacy concerns and can't be changed if compromised. **Context factors** are transparent to users but complex to implement and can change legitimately. The optimal approach combines multiple factors to balance security with user experience.
+<strong>Knowledge factors</strong> are highly usable (familiar, easily changed) but vulnerable to sharing and guessing. <strong>Possession factors</strong> offer better security through physical tokens but can be lost or stolen. <strong>Inherence factors</strong> (biometrics) provide strong security and convenience but raise privacy concerns and can't be changed if compromised. <strong>Context factors</strong> are transparent to users but complex to implement and can change legitimately. The optimal approach combines multiple factors to balance security with user experience.
 </div>
 </div>
 
@@ -395,7 +395,7 @@ Salt prevents rainbow table attacks by ensuring each password hash is unique, ev
 <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
 </div>
 <div class="answer">
-For banking, I'd implement: **Knowledge factor** (strong password/PIN), **Possession factor** (mobile app with push notifications or SMS), **Context factors** (device fingerprinting, geolocation, behavioral patterns). For high-value transactions, add **Inherence factor** (biometrics). This provides multiple layers of security while maintaining usability. Include risk-based authentication that requires additional factors for unusual activity patterns, locations, or transaction amounts.
+For banking, I'd implement: <strong>Knowledge factor</strong> (strong password/PIN), <strong>Possession factor</strong> (mobile app with push notifications or SMS), <strong>Context factors</strong> (device fingerprinting, geolocation, behavioral patterns). For high-value transactions, add <strong>Inherence factor</strong> (biometrics). This provides multiple layers of security while maintaining usability. Include risk-based authentication that requires additional factors for unusual activity patterns, locations, or transaction amounts.
 </div>
 </div>
 
@@ -405,7 +405,7 @@ For banking, I'd implement: **Knowledge factor** (strong password/PIN), **Posses
 <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
 </div>
 <div class="answer">
-**Strengths**: Enforces complexity that resists brute force attacks, prevents long-term credential reuse. **Weaknesses**: 8 characters is relatively short by modern standards, complexity requirements often lead to predictable patterns (Password1!, Password2!), 90-day expiration causes user fatigue and encourages weak password practices like incrementing numbers. **Better approach**: Longer minimum length (12+ characters), encourage passphrases, implement breach monitoring instead of arbitrary expiration, focus on password uniqueness across services.
+<strong>Strengths</strong>: Enforces complexity that resists brute force attacks, prevents long-term credential reuse. <strong>Weaknesses</strong>: 8 characters is relatively short by modern standards, complexity requirements often lead to predictable patterns (Password1!, Password2!), 90-day expiration causes user fatigue and encourages weak password practices like incrementing numbers. <strong>Better approach</strong>: Longer minimum length (12+ characters), encourage passphrases, implement breach monitoring instead of arbitrary expiration, focus on password uniqueness across services.
 </div>
 </div>
 
@@ -415,7 +415,7 @@ For banking, I'd implement: **Knowledge factor** (strong password/PIN), **Posses
 <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
 </div>
 <div class="answer">
-Multi-step process: **Identity verification** through multiple channels (email + SMS, or security questions + email), **Time-limited tokens** (15-30 minutes), **Single-use reset links** that expire after use, **Account lockout** after multiple failed attempts, **Audit logging** of all reset attempts, **Alternative verification** methods for compromised email accounts (in-person verification, secondary email, trusted contacts). Never send passwords in plaintext; always require users to create new passwords through secure forms.
+Multi-step process: <strong>Identity verification</strong> through multiple channels (email + SMS, or security questions + email), <strong>Time-limited tokens</strong> (15-30 minutes), <strong>Single-use reset links</strong> that expire after use, <strong>Account lockout</strong> after multiple failed attempts, <strong>Audit logging</strong> of all reset attempts, <strong>Alternative verification</strong> methods for compromised email accounts (in-person verification, secondary email, trusted contacts). Never send passwords in plaintext; always require users to create new passwords through secure forms.
 </div>
 </div>
 
@@ -437,7 +437,7 @@ Quantum computers using Grover's algorithm could theoretically reduce the effect
 <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
 </div>
 <div class="answer">
-IoT devices face unique challenges: **Limited input methods** (no keyboard/screen), **Constrained resources** (processing power, memory), **Physical access** risks, **Scalability** for device management. Solutions include: **Device certificates** embedded during manufacturing, **Bluetooth/WiFi pairing** with authenticated mobile apps, **QR codes** for initial setup, **Hardware security modules**, **Network-level authentication** through gateways, **Behavioral authentication** based on device usage patterns, **Remote attestation** to verify device integrity.
+IoT devices face unique challenges: <strong>Limited input methods</strong> (no keyboard/screen), <strong>Constrained resources</strong> (processing power, memory), <strong>Physical access</strong> risks, <strong>Scalability</strong> for device management. Solutions include: <strong>Device certificates</strong> embedded during manufacturing, <strong>Bluetooth/WiFi pairing</strong> with authenticated mobile apps, <strong>QR codes</strong> for initial setup, <strong>Hardware security modules</strong>, <strong>Network-level authentication</strong> through gateways, <strong>Behavioral authentication</strong> based on device usage patterns, <strong>Remote attestation</strong> to verify device integrity.
 </div>
 </div>
 
@@ -447,7 +447,7 @@ IoT devices face unique challenges: **Limited input methods** (no keyboard/scree
 <button class="toggle-btn" onclick="toggleAnswer(this)">Show Answer</button>
 </div>
 <div class="answer">
-Cultural factors include: **Privacy expectations** (biometric acceptance varies significantly), **Technology adoption** patterns (mobile-first vs desktop-first regions), **Language and character sets** (password complexity varies by script), **Regulatory requirements** (GDPR in Europe, different data residency laws), **Trust in institutions** affects acceptance of government-issued digital IDs, **Social structures** influence security question effectiveness, **Economic factors** affect device availability and internet connectivity. Global systems need flexible authentication options, localized user experiences, and compliance with regional regulations while maintaining security standards.
+Cultural factors include: <strong>Privacy expectations</strong> (biometric acceptance varies significantly), <strong>Technology adoption</strong> patterns (mobile-first vs desktop-first regions), <strong>Language and character sets</strong> (password complexity varies by script), <strong>Regulatory requirements</strong> (GDPR in Europe, different data residency laws), <strong>Trust in institutions</strong> affects acceptance of government-issued digital IDs, <strong>Social structures</strong> influence security question effectiveness, <strong>Economic factors</strong> affect device availability and internet connectivity. Global systems need flexible authentication options, localized user experiences, and compliance with regional regulations while maintaining security standards.
 </div>
 </div>
 
@@ -474,6 +474,11 @@ Cultural factors include: **Privacy expectations** (biometric acceptance varies 
 
 .answer.show {
     display: block;
+}
+
+.answer strong {
+    font-weight: 700;
+    color: #2c3e50;
 }
 
 .toggle-btn {
