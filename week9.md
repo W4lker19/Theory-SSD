@@ -268,3 +268,12 @@ Effective protection typically combines multiple techniques:
 ## Conclusion
 
 Software Reverse Engineering represents a fundamental challenge in cybersecurity. While perfect protection is theoretically impossible, a well-designed combination of anti-disassembly, anti-debugging, tamper-resistance, and obfuscation techniques can significantly increase the cost and complexity of reverse engineering attacks. The field continues to evolve rapidly, with new techniques emerging for both attack and defense, making it a critical area of study for cybersecurity professionals.
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
+    <button class="nav-btn prev-btn" onclick="window.location.href='week8.html'">
+        ← Previous Week: Malware Evolution
+    </button>
+    <button class="nav-btn next-btn" onclick="window.location.href='week10.html'">
+        Next Week: Digital Rights Management →
+    </button>
+</div>
