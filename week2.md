@@ -675,3 +675,12 @@ function toggleAnswer(button) {
     }
 }
 </script>
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
+    <button class="nav-btn prev-btn" onclick="window.location.href='week1.html'">
+        ← Previous Week: Authentication Fundamentals
+    </button>
+    <button class="nav-btn next-btn" onclick="window.location.href='week3.html'">
+        Next Week: Tokens and Two-Factor Authentication →
+    </button>
+</div>
