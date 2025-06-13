@@ -647,3 +647,12 @@ function toggleAnswer(button) {
 Digital Rights Management represents one of the most challenging problems in computer security, highlighting the fundamental limitations of software-based protection in hostile environments. While perfect DRM may be impossible on open platforms, understanding its principles, limitations, and attack vectors is crucial for designing effective content protection systems and making informed decisions about digital rights enforcement strategies.
 
 The key takeaway is that DRM is not purely a technical problem but involves complex interactions between technology, economics, law, and human behavior. Success in DRM requires understanding these multiple dimensions and designing solutions appropriate to the specific context and threat model.
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
+    <button class="nav-btn prev-btn" onclick="window.location.href='week9.html'">
+        ← Previous Week: Software Reverse Engineering
+    </button>
+    <button class="nav-btn next-btn" onclick="window.location.href='week11.html'">
+        Next Week: Digital Identity Management →
+    </button>
+</div>
