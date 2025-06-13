@@ -526,6 +526,3 @@ function toggleAnswer(button) {
         Next Week: Biometric Authentication →
     </button>
 </div>
-```
----
-
