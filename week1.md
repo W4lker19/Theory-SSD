@@ -517,3 +517,20 @@ function toggleAnswer(button) {
     }
 }
 </script>
+
+
+<div class="navigation-container">
+    <button class="nav-btn prev-btn" disabled>
+        ← Previous Week
+    </button>
+    <div class="week-indicator">
+        <span class="current-week">Week 1</span>
+        <span class="week-title">Authentication Fundamentals</span>
+    </div>
+    <a href="week2.md" class="nav-btn next-btn">
+        Next Week: Biometric Authentication
+    </a>
+</div>
+
+---
+
