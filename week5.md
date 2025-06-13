@@ -928,3 +928,12 @@ function toggleAnswer(button) {
     }
 }
 </script>
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
+    <button class="nav-btn prev-btn" onclick="window.location.href='week4.html'">
+        ← Previous Week: FIDO Alliance and Standards
+    </button>
+    <button class="nav-btn next-btn" onclick="window.location.href='week6.html'">
+        Next Week: Inference Control and CAPTCHA →
+    </button>
+</div>
