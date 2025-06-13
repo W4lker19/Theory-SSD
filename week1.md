@@ -527,9 +527,9 @@ function toggleAnswer(button) {
         <span class="current-week">Week 1</span>
         <span class="week-title">Authentication Fundamentals</span>
     </div>
-    <a href="week2.html" class="nav-btn next-btn">
-        Next Week: Biometric Authentication →
-    </a>
+		<button class="nav-btn next-btn" onclick="window.location.href='week2.html'">
+    	Next Week: Biometric Authentication
+		</button>
 </div>
 
 ---
