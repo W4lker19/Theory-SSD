@@ -518,7 +518,8 @@ function toggleAnswer(button) {
 }
 </script>
 
-<div class="navigation-container">
+```html
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
     <button class="nav-btn prev-btn" disabled>
         ← Previous Week
     </button>
@@ -526,6 +527,6 @@ function toggleAnswer(button) {
         Next Week: Biometric Authentication →
     </button>
 </div>
-
+```
 ---
 
