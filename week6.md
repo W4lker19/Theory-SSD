@@ -638,3 +638,12 @@ function toggleAnswer(button) {
     }
 }
 </script>
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
+    <button class="nav-btn prev-btn" onclick="window.location.href='week5.html'">
+        ← Previous Week: Access Control
+    </button>
+    <button class="nav-btn next-btn" onclick="window.location.href='week7.html'">
+        Next Week: Software Security - Vulnerabilities →
+    </button>
+</div>
