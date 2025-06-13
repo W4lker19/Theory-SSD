@@ -518,7 +518,6 @@ function toggleAnswer(button) {
 }
 </script>
 
-```html
 <div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
     <button class="nav-btn prev-btn" disabled>
         ← Previous Week
