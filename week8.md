@@ -825,3 +825,13 @@ function toggleAnswer(button) {
     }
 }
 </script>
+
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
+    <button class="nav-btn prev-btn" onclick="window.location.href='week7.html'">
+        ← Previous Week: Software Security - Vulnerabilities
+    </button>
+    <button class="nav-btn next-btn" onclick="window.location.href='week9.html'">
+        Next Week: Software Reverse Engineering →
+    </button>
+</div>
