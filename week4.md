@@ -780,3 +780,12 @@ function toggleAnswer(button) {
     }
 }
 </script>
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
+    <button class="nav-btn prev-btn" onclick="window.location.href='week3.html'">
+        ← Previous Week: Tokens and Two-Factor Authentication
+    </button>
+    <button class="nav-btn next-btn" onclick="window.location.href='week5.html'">
+        Next Week: Access Control →
+    </button>
+</div>
