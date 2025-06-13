@@ -764,3 +764,12 @@ function toggleAnswer(button) {
 - **Hardware security**: ARM Pointer Authentication, Intel CET
 - **Container security**: Isolation and orchestration challenges
 - **Serverless computing**: New attack surfaces and defense strategies
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 30px 0;">
+    <button class="nav-btn prev-btn" onclick="window.location.href='week6.html'">
+        ← Previous Week: Inference Control and CAPTCHA
+    </button>
+    <button class="nav-btn next-btn" onclick="window.location.href='week8.html'">
+        Next Week: Malware Evolution →
+    </button>
+</div>
